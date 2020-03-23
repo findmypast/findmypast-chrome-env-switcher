@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "FindMyPast Environment Switcher",
+  "version": "0.1",
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "permissions": ["storage", "declarativeContent", "activeTab"],
+
+  "page_action": {
+    "default_popup": "popup.html",
+
+    "default_icon": {
+      "16": "favicon.ico",
+      "32": "favicon.ico",
+      "48": "favicon.ico",
+      "128": "favicon.ico"
+    }
+  },
+
+  "icons": {
+    "16": "favicon.ico",
+    "32": "favicon.ico",
+    "48": "favicon.ico",
+    "128": "favicon.ico"
+  }
+}
