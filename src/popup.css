@@ -1,13 +1,72 @@
+:root {
+  --green: green;
+  --grey: grey;
+  --black: black;
+  --blue: blue;
+  --darkGrey: darkgrey;
+}
+
 body {
   margin: 5px;
   width: 300px;
   border: 1px solid black;
 }
 
+header {
+  padding: 0 0.5rem;
+}
+
 header > h1 {
-  font-size: 1rem;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header > p {
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: var(--darkGrey);
 }
 
 header > img {
   height: 30px;
+}
+
+section:last-child {
+  margin-top: 2rem;
+}
+
+section > h2 {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--grey);
+  border-bottom: 1px solid var(--black);
+  border-top: 1px solid var(--black);
+
+  margin: 0;
+}
+
+section > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list > button {
+  border: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--black);
+  text-align: left;
+}
+
+.list > button:hover {
+  background: var(--blue);
+}
+
+/* Increase specificity */
+.active.active.active {
+  background: var(--green);
 }
