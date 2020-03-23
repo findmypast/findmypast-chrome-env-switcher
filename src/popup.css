@@ -1,0 +1,13 @@
+body {
+  margin: 5px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+header > h1 {
+  font-size: 1rem;
+}
+
+header > img {
+  height: 30px;
+}

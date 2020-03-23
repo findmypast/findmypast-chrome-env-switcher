@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+    <script src="popup.js"></script>
   </head>
   <body>
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
+    <header>
+      <img src="logo.png" />
+      <h1>Locale and Environment Switcher</h1>
+      <p>
+        Disclaimer: This will only keep app state that is reflected in the URL
+      </p>
+    </header>
+
+    <section>
+      <h2>Environment</h2>
+      <ul>
+        <li><button class="active">Local</button></li>
+        <li><button>Integration</button></li>
+        <li><button>Production</button></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Locale</h2>
+      <ul>
+        <li><button>.co.uk</button></li>
+        <li><button class="active">.com</button></li>
+        <li><button>.au</button></li>
+        <li><button>.ie</button></li>
+      </ul>
+    </section>
   </body>
 </html>
