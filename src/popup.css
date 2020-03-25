@@ -1,22 +1,32 @@
-:root {
-  --green: green;
-  --grey: grey;
-  --black: black;
-  --blue: blue;
-  --darkGrey: darkgrey;
+@font-face {
+  font-family: "Azo Sans Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Azo Sans Regular"),
+    url("AzoSans/AzoSansRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Azo Sans Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Azo Sans Bold"), url("AzoSans/AzoSansBold.woff") format("woff");
 }
 
 body {
-  margin: 5px;
+  margin: 0;
   width: 300px;
-  border: 1px solid black;
+  background-color: rgb(243, 240, 236);
+
+  font-family: "Azo Sans Regular";
 }
 
 header {
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
 header > h1 {
+  color: rgb(230, 113, 110);
   margin: 0;
   font-size: 1.5rem;
 }
@@ -24,7 +34,7 @@ header > h1 {
 header > p {
   margin: 0.5rem 0;
   font-style: italic;
-  color: var(--darkGrey);
+  color: rgb(36, 32, 72);
 }
 
 header > img {
@@ -36,11 +46,11 @@ section:last-child {
 }
 
 section > h2 {
+  color: rgb(36, 32, 72);
   font-size: 1rem;
+  font-family: "Azo Sans Bold";
   padding: 0.5rem;
-  background-color: var(--grey);
-  border-bottom: 1px solid var(--black);
-  border-top: 1px solid var(--black);
+  text-decoration: underline;
 
   margin: 0;
 }
@@ -56,17 +66,30 @@ section > ul {
 }
 
 .list > button {
+  font-size: 1rem;
+  background-color: white;
+
   border: none;
   padding: 0.5rem;
-  border-bottom: 1px solid var(--black);
+  border-top: 1px solid rgb(36, 32, 72);
   text-align: left;
+  cursor: pointer;
+}
+
+.list > button:last-child {
+  border-bottom: 1px solid rgb(36, 32, 72);
 }
 
 .list > button:hover {
-  background: var(--blue);
+  background: rgb(146, 158, 194);
+}
+
+.list > button:focus {
+  outline: none;
 }
 
 /* Increase specificity */
 .active.active.active {
-  background: var(--green);
+  background: rgb(96, 163, 142);
+  cursor: default;
 }
