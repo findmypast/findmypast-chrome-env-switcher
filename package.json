@@ -1,0 +1,22 @@
+{
+  "name": "findmypast-chrome-env-switcher",
+  "version": "1.0.0",
+  "description": "A chrome extension that allows you to seamlessly switch between different environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinhenderson/findmypast-chrome-env-switcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gavinhenderson/findmypast-chrome-env-switcher/issues"
+  },
+  "homepage": "https://github.com/gavinhenderson/findmypast-chrome-env-switcher#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
