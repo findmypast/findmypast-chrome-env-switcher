@@ -76,8 +76,8 @@ describe("new-environment", () => {
   describe("SAFE search page", () => {
     it("integration -> production", () => {
       const searchPage =
-        "http://integration.search.findmypast.co.uk/search-united-kingdom-records?";
-      const result = newEnvironment(LOCAL, PRODUCTION, searchPage);
+        "http://integration.search.findmypast.co.uk/search-united-kingdom-records";
+      const result = newEnvironment(INTEGRATION, PRODUCTION, searchPage);
       const expected =
         "https://search.findmypast.co.uk/search-united-kingdom-records";
       expect(result).toEqual(expected);
@@ -86,9 +86,9 @@ describe("new-environment", () => {
     it("production -> integration", () => {
       const searchPage =
         "https://search.findmypast.co.uk/search-united-kingdom-records";
-      const result = newEnvironment(LOCAL, PRODUCTION, searchPage);
+      const result = newEnvironment(PRODUCTION, INTEGRATION, searchPage);
       const expected =
-        "http://integration.search.findmypast.co.uk/search-united-kingdom-records?";
+        "http://integration.search.findmypast.co.uk/search-united-kingdom-records";
       expect(result).toEqual(expected);
     });
   });
