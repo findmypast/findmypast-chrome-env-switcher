@@ -1,4 +1,4 @@
-module.exports = {
+const constants = {
   ENVIRONMENT: {
     INTEGRATION: "integration",
     PRODUCTION: "production",
@@ -11,3 +11,5 @@ module.exports = {
     US: ".com"
   }
 };
+
+export default constants;

@@ -1,6 +1,9 @@
-const {
-  ENVIRONMENT: { LOCAL, PRODUCTION, INTEGRATION }
-} = require("./consts");
+import CONSTANTS from "./consts";
+
+const ENVIRONMENT = CONSTANTS.ENVIRONMENT;
+const LOCAL = ENVIRONMENT.LOCAL;
+const INTEGRATION = ENVIRONMENT.INTEGRATION;
+const PRODUCTION = ENVIRONMENT.PRODUCTION;
 
 const ENV_PROPERTIES = {
   [LOCAL]: {
@@ -53,4 +56,4 @@ const newEnvironment = (fromEnv, toEnv, url) => {
   return `${targetProtocol}://${targetSubdomain}.findmypast.co.uk${targetPort}${targetPathname}${targetParams}`;
 };
 
-module.exports = newEnvironment;
+export default newEnvironment;

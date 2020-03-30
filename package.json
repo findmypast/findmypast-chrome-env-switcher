@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gavinhenderson/findmypast-chrome-env-switcher#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
     "jest": "^25.1.0"
   }
 }

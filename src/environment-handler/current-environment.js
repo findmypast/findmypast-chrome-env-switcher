@@ -1,4 +1,9 @@
-const { ENVIRONMENT } = require("./consts");
+import CONSTANTS from "./consts";
+
+const ENVIRONMENT = CONSTANTS.ENVIRONMENT;
+const LOCAL = ENVIRONMENT.LOCAL;
+const INTEGRATION = ENVIRONMENT.INTEGRATION;
+const PRODUCTION = ENVIRONMENT.PRODUCTION;
 
 const currentEnvironment = url => {
   if (url.includes("local")) {
@@ -10,4 +15,4 @@ const currentEnvironment = url => {
   }
 };
 
-module.exports = currentEnvironment;
+export default currentEnvironment;

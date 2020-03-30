@@ -1,5 +1,10 @@
-const { ENVIRONMENT } = require("./consts");
-const currentEnvironment = require("./current-environment");
+import CONSTANTS from "./consts";
+import currentEnvironment from "./current-environment";
+
+const ENVIRONMENT = CONSTANTS.ENVIRONMENT;
+const LOCAL = ENVIRONMENT.LOCAL;
+const INTEGRATION = ENVIRONMENT.INTEGRATION;
+const PRODUCTION = ENVIRONMENT.PRODUCTION;
 
 describe("current-environment", () => {
   describe("landing page with protocol", () => {

@@ -1,7 +1,10 @@
-const {
-  ENVIRONMENT: { INTEGRATION, LOCAL, PRODUCTION }
-} = require("./consts");
-const newEnvironment = require("./new-environment");
+import CONSTANTS from "./consts";
+import newEnvironment from "./new-environment";
+
+const ENVIRONMENT = CONSTANTS.ENVIRONMENT;
+const LOCAL = ENVIRONMENT.LOCAL;
+const INTEGRATION = ENVIRONMENT.INTEGRATION;
+const PRODUCTION = ENVIRONMENT.PRODUCTION;
 
 describe("new-environment", () => {
   describe("landing page", () => {
