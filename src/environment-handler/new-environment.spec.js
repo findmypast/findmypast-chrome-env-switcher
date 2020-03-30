@@ -38,37 +38,37 @@ describe("new-environment", () => {
   describe("titan search page", () => {
     it("integration -> local", () => {
       const searchPage =
-        "https://integration.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+        "https://integration.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain&promptForRegistration=true";
       const result = newEnvironment(INTEGRATION, LOCAL, searchPage);
       const expected =
-        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain&promptForRegistration=true";
       expect(result).toEqual(expected);
     });
 
     it("local -> integration", () => {
       const searchPage =
-        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain";
       const result = newEnvironment(LOCAL, INTEGRATION, searchPage);
       const expected =
-        "https://integration.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+        "https://integration.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain";
       expect(result).toEqual(expected);
     });
 
     it("production -> local", () => {
       const searchPage =
-        "https://www.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain";
+        "https://www.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain";
       const result = newEnvironment(PRODUCTION, LOCAL, searchPage);
       const expected =
-        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain";
       expect(result).toEqual(expected);
     });
 
     it("local -> production", () => {
       const searchPage =
-        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain";
       const result = newEnvironment(LOCAL, PRODUCTION, searchPage);
       const expected =
-        "https://www.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain";
+        "https://www.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great+britain";
       expect(result).toEqual(expected);
     });
   });
