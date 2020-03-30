@@ -6,8 +6,7 @@ const newEnvironment = require("./new-environment");
 describe("new-environment", () => {
   describe("landing page", () => {
     it("integration -> local", () => {
-      const landingPage =
-        "https://integration.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
+      const landingPage = "https://integration.findmypast.co.uk/";
       const result = newEnvironment(INTEGRATION, LOCAL, landingPage);
       const expected = "http://local.findmypast.co.uk:3100/";
 
