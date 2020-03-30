@@ -15,9 +15,9 @@ describe("new-environment", () => {
     });
 
     it("local -> integration", () => {
-      const landingPage = "http://local.findmypast.co.uk:3100/";
+      const landingPage = "http://local.findmypast.co.uk:3100";
       const result = newEnvironment(LOCAL, INTEGRATION, landingPage);
-      const expected = "https://integration.findmypast.co.uk";
+      const expected = "https://integration.findmypast.co.uk/";
       expect(result).toEqual(expected);
     });
 
@@ -41,8 +41,8 @@ describe("new-environment", () => {
       const searchPage =
         "https://integration.findmypast.co.uk/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
       const result = newEnvironment(INTEGRATION, LOCAL, searchPage);
-      const expected = "http://local.findmypast.co.uk:3100/";
-
+      const expected =
+        "http://local.findmypast.co.uk:3100/search/results?firstname=gavin&firstname_variants=true&lastname=henderson&sourcecountry=great%20britain&promptForRegistration=true";
       expect(result).toEqual(expected);
     });
 
