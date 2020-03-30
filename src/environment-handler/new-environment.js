@@ -1,4 +1,4 @@
-import CONSTANTS from "./consts";
+import CONSTANTS from "./consts.js";
 
 const ENVIRONMENT = CONSTANTS.ENVIRONMENT;
 const LOCAL = ENVIRONMENT.LOCAL;
