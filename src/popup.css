@@ -41,9 +41,9 @@ header > img {
   height: 30px;
 }
 
-section:last-child {
+/* section:last-child {
   margin-top: 2rem;
-}
+} */
 
 section > h2 {
   color: rgb(36, 32, 72);
