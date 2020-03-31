@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="popup.css" />
-    <script src="popup.js"></script>
+    <script src="popup.js" type="module"></script>
   </head>
   <body>
     <header>
@@ -15,20 +15,20 @@
     <section>
       <h2>Environment</h2>
       <div class="list">
-        <button class="active">Local</button>
-        <button>Integration</button>
-        <button>Production</button>
+        <button id="local">Local</button>
+        <button id="integration">Integration</button>
+        <button id="production">Production</button>
       </div>
     </section>
 
-    <section>
+    <!-- <section>
       <h2>Locale</h2>
       <div class="list">
         <button>.co.uk</button>
-        <button class="active">.com</button>
+        <button>.com</button>
         <button>.au</button>
         <button>.ie</button>
       </div>
-    </section>
+    </section> -->
   </body>
 </html>
