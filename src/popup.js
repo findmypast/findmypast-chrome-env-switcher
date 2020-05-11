@@ -1,11 +1,9 @@
 import currentEnvironment from "./environment-handler/current-environment.js";
 import newEnvironment from "./environment-handler/new-environment.js";
 
-import CONSTANTS from "./environment-handler/consts.js";
+import { ENVIRONMENT } from "./environment-handler/consts.js";
 
-const productionButton = document.getElementById("production");
-const integrationButton = document.getElementById("integration");
-const localButton = document.getElementById("local");
+const button = (env) => document.getElementById(env);
 
 const buttonClick = (from, to, tab) => () => {
   const newUrl = newEnvironment(from, to, tab.url);
@@ -16,27 +14,21 @@ const buttonClick = (from, to, tab) => () => {
 chrome.tabs.getSelected(tab => {
   const currentEnv = currentEnvironment(tab.url);
 
-  if (currentEnv === CONSTANTS.ENVIRONMENT.LOCAL) {
-    localButton.classList.toggle("active");
-  } else if (currentEnv === CONSTANTS.ENVIRONMENT.INTEGRATION) {
-    integrationButton.classList.toggle("active");
-  } else if (currentEnv === CONSTANTS.ENVIRONMENT.PRODUCTION) {
-    productionButton.classList.toggle("active");
-  }
+  button(currentEnv).classList.toggle("active");
 
-  localButton.onclick = buttonClick(
+  button(ENVIRONMENT.LOCAL).onclick = buttonClick(
     currentEnv,
-    CONSTANTS.ENVIRONMENT.LOCAL,
+    ENVIRONMENT.LOCAL,
     tab
   );
-  integrationButton.onclick = buttonClick(
+  button(ENVIRONMENT.INTEGRATION).onclick = buttonClick(
     currentEnv,
-    CONSTANTS.ENVIRONMENT.INTEGRATION,
+    ENVIRONMENT.INTEGRATION,
     tab
   );
-  productionButton.onclick = buttonClick(
+  button(ENVIRONMENT.PRODUCTION).onclick = buttonClick(
     currentEnv,
-    CONSTANTS.ENVIRONMENT.PRODUCTION,
+    ENVIRONMENT.PRODUCTION,
     tab
   );
 });
