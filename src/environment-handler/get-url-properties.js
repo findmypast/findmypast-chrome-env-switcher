@@ -3,7 +3,7 @@ import CONSTANTS from './consts';
 
 const { ENVIRONMENT } = CONSTANTS;
 
-const PROTOCOL_GROUP = "(?<protocol>https?):\/\/";
+const PROTOCOL_GROUP = "((?<protocol>https?):\/\/)?";
 
 const ENV_SUBDOMAIN_GROUP = "(?<envSubdomain>local|integration|www)\\.";
 const SEARCH_SUBDOMAIN_GROUP = "(?<searchSubdomain>search)\\.";

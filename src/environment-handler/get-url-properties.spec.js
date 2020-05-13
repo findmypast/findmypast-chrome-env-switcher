@@ -14,7 +14,7 @@ describe("get-url-properties", () => {
 
     describe("getUrlProperties", () => {
         it("is able to correctly identify the properties for a local findmypast URL", () => {
-            const localLandingPage = 'http://local.findmypast.co.uk:3100/test';
+            const localLandingPage = 'local.findmypast.co.uk:3100/test';
             const expected = {
                 environment: ENVIRONMENT.LOCAL,
                 isSearchPage: false,
@@ -25,7 +25,7 @@ describe("get-url-properties", () => {
 
         })
         it("is able to correctly identify the properties for an integration findmypast URL", () => {
-            const localLandingPage = 'https://integration.findmypast.co.uk/test';
+            const localLandingPage = 'integration.findmypast.co.uk/test';
             const expected = {
                 environment: ENVIRONMENT.INTEGRATION,
                 isSearchPage: false,
@@ -36,7 +36,7 @@ describe("get-url-properties", () => {
 
         })
         it("is able to correctly identify the properties for a production findmypast URL with www", () => {
-            const productionLandingPageWithWww = 'https://www.findmypast.ie/test';
+            const productionLandingPageWithWww = 'www.findmypast.ie/test';
             const expected = {
                 environment: ENVIRONMENT.PRODUCTION,
                 isSearchPage: false,
@@ -47,7 +47,7 @@ describe("get-url-properties", () => {
 
         })
         it("is able to correctly identify the properties for a production findmypast URL without www", () => {
-            const productionLandingPageNoWww = 'https://findmypast.com/test';
+            const productionLandingPageNoWww = 'findmypast.com/test';
             const expected = {
                 environment: ENVIRONMENT.PRODUCTION,
                 isSearchPage: false,
@@ -58,7 +58,7 @@ describe("get-url-properties", () => {
 
         })
         it("is able to correctly identify the properties for an integration SAFE URL", () => {
-            const integrationSafeLandingPage = 'http://integration.search.findmypast.co.uk/test';
+            const integrationSafeLandingPage = 'integration.search.findmypast.co.uk/test';
             const expected = {
                 environment: ENVIRONMENT.INTEGRATION,
                 isSearchPage: true,
@@ -69,7 +69,7 @@ describe("get-url-properties", () => {
 
         })
         it("is able to correctly identify the properties for a production SAFE URL", () => {
-            const productionSafeLandingPage = 'https://search.findmypast.co.uk/test';
+            const productionSafeLandingPage = 'search.findmypast.co.uk/test';
             const expected = {
                 environment: ENVIRONMENT.PRODUCTION,
                 isSearchPage: true,
@@ -84,6 +84,7 @@ describe("get-url-properties", () => {
     describe("extractFindmypastUrlPropertiesByRegex", () => {
         it("is able to extract the protocol", () => {
             const values = [
+                { param: 'findmypast.com', expected: undefined },
                 { param: 'https://findmypast.com', expected: 'https' },
                 { param: 'http://findmypast.com', expected: 'http' }
             ]
