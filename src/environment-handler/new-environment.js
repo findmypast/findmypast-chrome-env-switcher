@@ -3,24 +3,21 @@ import CONSTANTS from "./consts";
 import getUrlProperties from './get-url-properties';
 import writeNewUrl from './write-new-url';
 
-const isUrlSearchPage = url => {
-  const fromURL = new URL(url);
-
-  return fromURL.host.includes("search");
-};
-
 const newEnvironment = (fromEnv, toEnv, url) => {
   const fromURL = new URL(url);
 
   const pathname = fromURL.pathname;
   const searchParams = fromURL.search;
 
-  const isSearchPage = isUrlSearchPage(url);
+  const {
+    isSearchPage,
+    topLevelDomain,
+  } = getUrlProperties(fromURL.origin)
 
   return writeNewUrl({
     environment: toEnv,
     isSearchPage,
-    topLevelDomain: 'co.uk',
+    topLevelDomain,
     pathname,
     searchParams
   })
