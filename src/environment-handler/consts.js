@@ -5,10 +5,15 @@ const constants = {
     LOCAL: "local"
   },
   LOCALE: {
-    UK: ".co.uk",
-    AU: ".au",
-    IE: ".ie",
-    US: ".com"
+    UK: "co.uk",
+    AU: "au",
+    IE: "ie",
+    US: "com"
+  },
+  DOMAIN: {
+    SEARCH: 'search',
+    WWW: 'www',
+    DEFAULT: ''
   }
 };
 

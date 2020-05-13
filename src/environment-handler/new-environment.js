@@ -1,35 +1,7 @@
-import CONSTANTS from "./consts.js";
+import CONSTANTS from "./consts";
 
-const ENVIRONMENT = CONSTANTS.ENVIRONMENT;
-const LOCAL = ENVIRONMENT.LOCAL;
-const INTEGRATION = ENVIRONMENT.INTEGRATION;
-const PRODUCTION = ENVIRONMENT.PRODUCTION;
-
-const ENV_PROPERTIES = {
-  [LOCAL]: {
-    PROTOCOL: "http",
-    SUBDOMAIN: "local",
-    PORT: ":3100"
-  },
-  [INTEGRATION]: {
-    PROTOCOL: "https",
-    SUBDOMAIN: "integration",
-    PORT: "",
-    SEARCH: {
-      SUBDOMAIN: "integration.search",
-      PROTOCOL: "http"
-    }
-  },
-  [PRODUCTION]: {
-    PROTOCOL: "https",
-    SUBDOMAIN: "www",
-    PORT: "",
-    SEARCH: {
-      SUBDOMAIN: "search",
-      PROTOCOL: "https"
-    }
-  }
-};
+import getUrlProperties from './get-url-properties';
+import writeNewUrl from './write-new-url';
 
 const isUrlSearchPage = url => {
   const fromURL = new URL(url);
@@ -39,21 +11,20 @@ const isUrlSearchPage = url => {
 
 const newEnvironment = (fromEnv, toEnv, url) => {
   const fromURL = new URL(url);
-  const fromParams = fromURL.searchParams.toString();
+
+  const pathname = fromURL.pathname;
+  const searchParams = fromURL.search;
+
   const isSearchPage = isUrlSearchPage(url);
-  const envProperties = ENV_PROPERTIES[toEnv];
 
-  const targetProtocol = isSearchPage
-    ? envProperties.SEARCH.PROTOCOL
-    : envProperties.PROTOCOL;
-  const targetSubdomain = isSearchPage
-    ? envProperties.SEARCH.SUBDOMAIN
-    : envProperties.SUBDOMAIN;
-  const targetPort = envProperties.PORT;
-  const targetPathname = fromURL.pathname;
-  const targetParams = fromParams === "" ? "" : `?${fromParams}`;
+  return writeNewUrl({
+    environment: toEnv,
+    isSearchPage,
+    topLevelDomain: 'co.uk',
+    pathname,
+    searchParams
+  })
 
-  return `${targetProtocol}://${targetSubdomain}.findmypast.co.uk${targetPort}${targetPathname}${targetParams}`;
 };
 
 export default newEnvironment;
