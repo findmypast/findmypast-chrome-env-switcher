@@ -1,7 +1,7 @@
-import CONSTANTS from "./consts";
+import CONSTANTS from "./consts.js";
 
-import getUrlProperties from './get-url-properties';
-import writeNewUrl from './write-new-url';
+import getUrlProperties from './get-url-properties.js';
+import writeNewUrl from './write-new-url.js';
 
 const newEnvironment = (targetEnv, currentUrl) => {
   const url = new URL(currentUrl);

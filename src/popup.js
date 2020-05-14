@@ -1,6 +1,8 @@
 import newEnvironment from "./environment-handler/new-environment.js";
+import CONSTANTS from "./environment-handler/consts.js";
+import getUrlProperties from "./environment-handler/get-url-properties.js";
 
-import { ENVIRONMENT } from "./environment-handler/consts.js";
+const { ENVIRONMENT } = CONSTANTS;
 
 const button = (env) => document.getElementById(env);
 

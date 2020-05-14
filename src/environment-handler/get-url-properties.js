@@ -1,5 +1,5 @@
 
-import CONSTANTS from './consts';
+import CONSTANTS from './consts.js';
 
 const { ENVIRONMENT } = CONSTANTS;
 
